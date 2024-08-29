@@ -33,8 +33,28 @@ public class Statistics {
         for (Rider rider : riderResultList) {
             if (rider.getHoldNavn().equals(team)) {
                 teamMembers.add(rider.getRytterNavn());
-            }return teamMembers;
+            }
         }return teamMembers;
 
+    }
+
+    public Map<String, List<String>> getTeamsWithMembers1() {
+        Map<String, List<String>> teamsWithMembers = new HashMap<>();
+
+        for (Rider rider : riderResultList) {
+            String teamName = rider.getHoldNavn();
+            String riderName = rider.getRytterNavn();
+
+
+            if (!teamsWithMembers.containsKey(teamName)) {
+
+                teamsWithMembers.put(teamName, new ArrayList<>());
+            }
+
+
+            teamsWithMembers.get(teamName).add(riderName);
+        }
+
+        return teamsWithMembers;
     }
 }

@@ -6,10 +6,11 @@ import java.util.List;
 import java.util.Scanner;
 
 public class TDFFileReader {
+    private File tdfFileList;
     public TDFFileReader(String filename){
         tdfFileList = new File(filename);
     }
-private File tdfFileList;
+
 
 public List<Rider> readFile() throws FileNotFoundException {
 List<Rider> tdfResultList =new ArrayList<>();
